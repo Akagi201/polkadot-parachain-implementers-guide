@@ -1,0 +1,16 @@
+[book]
+authors = ["Akagi201"]
+language = "zh-CN"
+multilingual = true
+src = "src/zh-CN"
+title = "Polkadot 平行链实现指南"
+
+[preprocessor.graphviz]
+command = "mdbook-graphviz"
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+
+[output.html]
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[output.linkcheck]
