@@ -21,15 +21,35 @@ jobs:
       - name: Set up
         run: sudo apt-get update -y && sudo apt install -y git clang curl libssl-dev llvm libudev-dev graphviz
       
-      - name: cargo install
-        run: cargo install mdbook mdbook-linkcheck mdbook-graphviz mdbook-mermaid
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
         with:
-          mdbook-version: 'latest'
+          toolchain: stable
+          profile: minimal
+          override: true
+          default: true
+      
+      - name: Set up Cargo Bin Install
+        run: |
+          export PATH="$PATH:$HOME/.cargo/bin"
+          wget https://github.com/ryankurte/cargo-binstall/releases/latest/download/cargo-binstall-x86_64-unknown-linux-gnu.tgz
+          tar xf cargo-binstall-x86_64-unknown-linux-gnu.tgz --directory=$HOME/.cargo/bin
+      
+      - name: Set up Cache
+        uses: Swatinem/rust-cache@v1
+      
+      - name: cargo install mdbook tools
+        run: |
+          cargo-binstall mdbook --no-confirm
+          cargo install mdbook-linkcheck mdbook-graphviz mdbook-mermaid
 
-      - run: mdbook build
+      # - name: Setup mdBook
+      #   uses: peaceiris/actions-mdbook@v1
+      #   with:
+      #     mdbook-version: 'latest'
+
+      - name: Build mdBook
+        run: mdbook build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
