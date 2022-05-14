@@ -1,0 +1,39 @@
+name: github pages
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: deploy to github pages
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Set up
+        run: sudo apt install -y git clang curl libssl-dev llvm libudev-dev graphviz
+      
+      - name: cargo install
+        run: cargo install mdbook mdbook-linkcheck mdbook-graphviz mdbook-mermaid
+
+      - name: Setup mdBook
+        uses: peaceiris/actions-mdbook@v1
+        with:
+          mdbook-version: 'latest'
+
+      - run: mdbook build
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book

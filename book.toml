@@ -1,8 +1,8 @@
 [book]
 authors = ["Akagi201"]
-language = "zh-CN"
+language = "en"
 multilingual = true
-src = "src/zh-CN"
+src = "src/en"
 title = "Polkadot 平行链实现指南"
 
 [preprocessor.graphviz]
