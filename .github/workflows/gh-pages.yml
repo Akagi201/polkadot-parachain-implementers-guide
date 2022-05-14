@@ -46,7 +46,9 @@ jobs:
       - name: cargo install mdbook tools
         run: |
           cargo-binstall mdbook --no-confirm
-          cargo install mdbook-linkcheck mdbook-graphviz mdbook-mermaid
+          cargo-binstall mdbook-linkcheck --no-confirm
+          cargo-binstall mdbook-graphviz --no-confirm
+          cargo-binstall mdbook-mermaid --no-confirm
 
       # - name: Setup mdBook
       #   uses: peaceiris/actions-mdbook@v1
