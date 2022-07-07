@@ -69,7 +69,7 @@
     - [Chain API Requests](node/utility/chain-api.md)
     - [Chain Selection Request](node/utility/chain-selection.md)
     - [PVF Pre-Checking](node/utility/pvf-prechecker.md)
-- [Data Structures and Types](types/README.md)
+  - [Data Structures and Types](types/README.md)
     - [Candidate](types/candidate.md)
     - [Backing](types/backing.md)
     - [Availability](types/availability.md)
