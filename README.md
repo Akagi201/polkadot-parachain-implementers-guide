@@ -4,7 +4,7 @@
 
 波卡官方 `The Polkadot Parachain Host Implementers' Guide` 中文版
 
-英文原版地址：[repo](https://github.com/paritytech/polkadot/tree/master/roadmap/implementers-guide) rev: 55bf03157ff14dfabd6f63c5d65aa108ce42d83e
+英文原版地址：[repo](https://github.com/paritytech/polkadot/tree/master/roadmap/implementers-guide) rev: 64f094877a96c4e3c41b861642b290bbd20cbaff
 
 ## Build the book
 
