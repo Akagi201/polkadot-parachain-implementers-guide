@@ -1,5 +1,7 @@
 # Polkadot 平行链实现指南
 
+[![docs lint](https://github.com/Akagi201/polkadot-parachain-implementers-guide/actions/workflows/linter.yml/badge.svg)](https://github.com/Akagi201/polkadot-parachain-implementers-guide/actions/workflows/linter.yml)
+
 波卡官方 `The Polkadot Parachain Host Implementers' Guide` 中文版
 
 英文原版地址：[repo](https://github.com/paritytech/polkadot/tree/master/roadmap/implementers-guide) rev: 55bf03157ff14dfabd6f63c5d65aa108ce42d83e
