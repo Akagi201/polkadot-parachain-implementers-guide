@@ -59,7 +59,7 @@
 6. 包含：已支持并被认为是可用的。
 7. 接受：已支持，可使用，且无争议。
 
-```mermaid
+```dot process Inclusion Pipeline
 digraph {
 	subgraph cluster_vg {
 		label=<
@@ -133,7 +133,7 @@ digraph {
 
 还需要注意的是，中继链是由 BABE 扩展的，它是一种分叉算法。这意味着不同的区块作者可以同时被选择，而且可能不是建立在同一个区块父本上。此外，验证人的集合并不固定，平行链的集合也不固定。而且，即使有相同的验证人和平行链集，验证人对平行链集的分配也是灵活的。这意味着，在接下来的章节中提出的架构必须处理网络状态的可变性和多重性。
 
-```mermaid
+```dot process
 digraph {
 	rca [label="Relay Block A" shape=box]
 	rcb [label="Relay Block B" shape=box]
@@ -172,7 +172,7 @@ digraph {
 
 在这个例子中，第 1 组已经收到了 C 块，而其他组由于网络不同步而没有收到。现在，第 2 组的验证人可以在 B 的基础上建立另一个块，称为 C'。假设之后，一些验证人同时知道了 C 和 C'，而其他验证人仍然只知道一个。
 
-```meramid
+```dot process
 digraph {
 	rca [label="Relay Block A" shape=box]
 	rcb [label="Relay Block B" shape=box]
