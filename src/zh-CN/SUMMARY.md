@@ -4,8 +4,8 @@
 
 - [平行链从何而来](whence-parachains.md)
 - [协议概览](protocol-overview.md)
-  - [审批流程](protocol-approval.md)
-  - [争议流程](protocol-disputes.md)
+  - [审批程序](protocol-approval.md)
+  - [争议程序](protocol-disputes.md)
     - [争议工作流](disputes-flow.md)
   - [链选择和最终化](protocol-chain-selection.md)
 - [架构概览](architecture.md)
